@@ -1,73 +1,40 @@
-local ScreenGui = Instance.new("ScreenGui")
-local ImageButton = Instance.new("ImageButton")
-local UICorner = Instance.new("UICorner")
+local Window = MakeWindow({
+         Hub = {
+         Title = "3tạ Roblox",
+         Animation = "Bố Chiến Mẹ Mai"
+         },
+        Key = {
+        KeySystem = false,
+        Title = "Key System",
+        Description = "Hack Mai",
+        KeyLink = "https://ymnnote.com/n/6e726e",
+        Keys = {"vvcdfghcshe-((?;-:;;;"},
+        Notifi = {
+        Notifications = true,
+        CorrectKey = "Running the Script...",
+       Incorrectkey = "The key is incorrect",
+       CopyKeyLink = "Copied to Clipboard"
+      }
+    }
+  })
 
-ScreenGui.Parent = game.CoreGui
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-ImageButton.Parent = ScreenGui
-ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ImageButton.BorderSizePixel = 0
-ImageButton.Position = UDim2.new(0.10615778, 0, 0.16217947, 0)
-ImageButton.Size = UDim2.new(0, 50, 0, 40)
-ImageButton.Draggable = true
-ImageButton.Image = "http://www.roblox.com/asset/?id=83190276951914"
-
-UICorner.CornerRadius = UDim.new(1, 10) 
-UICorner.Parent = ImageButton
-
-ImageButton.MouseButton1Down:Connect(function()
-    game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game)
-end)
-
-local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
-repeat wait() until game:IsLoaded()
-local Window = Fluent:CreateWindow({
-    Title = "Mẹ Mai Roblox Tổng Hợp",
-    Animation = "Bố Chiến Mẹ Mai",
-    SubTitle = "Blox Fruit",
-    TabWidth = 157,
-    Size = UDim2.fromOffset(450, 300),
-    Acrylic = true,
-    Theme = "Dark",
-    MinimizeKey = Enum.KeyCode.End
-})
-local Tabs = {
-        Main0=Window:AddTab({ Title="Thông Tin" }),
-        Main1=Window:AddTab({ Title="Script Farm" }),
-        Main2=Window:AddTab({ Title="Farm Fruit" }),
-        Main3=Window:AddTab({ Title="Farm Chest" }),
-        Main4=Window:AddTab({ Title="Script Hop" }),
-       Main5=Window:AddTab({ Title="lin tinh" }),
-}
-    Tabs.Main0:AddButton({
-    Title = "Discord",
-    Description = "Mẹ Mai Roblox Community",
-    Callback = function()
-        setclipboard("https://discord.gg/tboyroblox-community-1253927333920899153")
-    end
-})
-
-    Tabs.Main0:AddButton({
-    Title = "Youtuber",
-    Description = "Mẹ Mai Roblox",
-    Callback = function()
-        setclipboard("https://www.youtube.com/@TBoyRoblox08")
-    end
-})
-
-    Tabs.Main0:AddButton({
-    Title = "Youtuber",
-    Description = "Mẹ Mai Gamer",
-    Callback = function()
-        setclipboard("https://www.youtube.com/@TBoyGamer08")
-    end
-})
+       MinimizeButton({
+       Image = "http://www.roblox.com/asset/?id=94710525730668",
+       Size = {60, 50},
+       Color = Color3.fromRGB(10, 10, 10),
+       Corner = true,
+       Stroke = false,
+       StrokeColor = Color3.fromRGB(255, 0, 0)
+      })
+      
+------ Tab
+     local Tab1o = MakeTab({Name = "Script Farm"})
+     
+------- BUTTON
     
-    Tabs.Main1:AddButton({
-    Title="Redz Hub",
-    Description="",
-    Callback=function()
+    AddButton(Tab1o, {
+     Name = "Redz Hub",
+    Callback = function()
 	  local Settings = {
   JoinTeam = "Pirates"; -- Pirates/Marines
   Translator = true; -- true/false
@@ -75,12 +42,4 @@ local Tabs = {
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/newredz/BloxFruits/refs/heads/main/Source.luau"))(Settings)
   end
-})
-
-Tabs.Main1:AddButton({
-    Title="GreenZ Hub",
-    Description="",
-    Callback=function()
-	  loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaAnarchist/GreenZ-Hub/refs/heads/main/KaitunDoughKing.lua"))()
-  end
-})
+  })
